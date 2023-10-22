@@ -1,6 +1,6 @@
-import type { LoginFormValues } from './types';
+import type { ILoginFormValues } from './types';
 
-export const initialLoginFormValues: LoginFormValues = {
+export const initialLoginFormValues: ILoginFormValues = {
     login: '',
     password: '',
 };

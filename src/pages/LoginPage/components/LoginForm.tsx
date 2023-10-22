@@ -12,7 +12,7 @@ import {
     LoginFormFieldsStyled,
     LoginFormStyled,
 } from '../styled/LoginForm.styled';
-import type { LoginFormValues } from '../types';
+import type { ILoginFormValues } from '../types';
 import { setLoginFormSchema } from '../validation';
 
 export const LoginForm: FC = () => {
@@ -22,7 +22,7 @@ export const LoginForm: FC = () => {
 
     const { handleValidate, isFetching } = useValidateUserAuth();
 
-    const handleSubmitLogin = (values: LoginFormValues) => {
+    const handleSubmitLogin = (values: ILoginFormValues) => {
         const isValid = handleValidate(values);
         if (isValid) {
             handleLogin();
@@ -32,7 +32,7 @@ export const LoginForm: FC = () => {
     };
 
     const { values, touched, errors, handleChange, handleSubmit } =
-        useFormik<LoginFormValues>({
+        useFormik<ILoginFormValues>({
             initialValues: initialLoginFormValues,
             validationSchema: setLoginFormSchema(),
             onSubmit: handleSubmitLogin,

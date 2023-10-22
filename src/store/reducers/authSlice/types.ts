@@ -1,3 +1,3 @@
-export type AuthStateType = {
+export interface IAuthStateType {
     isLoggedIn: boolean;
-};
+}
