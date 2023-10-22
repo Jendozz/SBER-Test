@@ -3,16 +3,12 @@ import { createBrowserRouter, type RouteObject } from 'react-router-dom';
 import { SuspenseComponent } from '@components/SuspenseComponent/SuspenseComponent';
 import { BasePage } from '@modules/BasePage';
 import { LoginPage } from '@pages/LoginPage';
-import { RootPage } from '@pages/RootPage';
 
-import { LazyProfilePage } from './lazyComponents';
+import { LazyProfilePage, LazyRootPage } from './lazyComponents';
+import { ProtectedRoute } from './ProtectedRoute';
 import { ERoutePath } from './routesConstants';
 
 export const routes: Array<RouteObject> = [
-    {
-        path: ERoutePath.ROOT,
-        element: <RootPage />,
-    },
     {
         path: ERoutePath.LOGIN,
         element: (
@@ -22,11 +18,22 @@ export const routes: Array<RouteObject> = [
         ),
     },
     {
-        path: ERoutePath.PROFILE,
+        path: ERoutePath.ROOT,
+
         element: (
             <BasePage>
-                <SuspenseComponent LazyComponent={LazyProfilePage} />
+                <SuspenseComponent LazyComponent={LazyRootPage} />
             </BasePage>
+        ),
+    },
+    {
+        path: ERoutePath.PROFILE,
+        element: (
+            <ProtectedRoute>
+                <BasePage>
+                    <SuspenseComponent LazyComponent={LazyProfilePage} />
+                </BasePage>
+            </ProtectedRoute>
         ),
     },
 ];

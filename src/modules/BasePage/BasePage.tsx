@@ -5,11 +5,11 @@ import { Header } from '@modules/Header';
 
 import { BasePageContainer, BasePageMainContainer } from './BasePage.styled';
 
-interface BasePageProps {
+interface IBasePageProps {
     children: ReactNode;
 }
 
-export const BasePage: FC<BasePageProps> = ({ children }) => {
+export const BasePage: FC<IBasePageProps> = ({ children }) => {
     return (
         <BasePageContainer>
             <Header />

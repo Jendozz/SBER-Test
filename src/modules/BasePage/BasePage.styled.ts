@@ -9,9 +9,10 @@ export const BasePageContainer = styled.div`
 `;
 export const BasePageMainContainer = styled.main`
     flex: 1;
+    display: flex;
     align-self: center;
-    background-color: red;
     width: 100%;
     max-width: ${MAX_CONTENT_WIDTH};
     padding: ${LAYOUT_PADDING};
+
 `;

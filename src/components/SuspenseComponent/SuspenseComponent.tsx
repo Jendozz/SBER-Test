@@ -3,11 +3,11 @@ import { Suspense } from 'react';
 
 import { Loader } from '@components/Loader';
 
-interface SuspenseComponentProps {
+interface ISuspenseComponentProps {
     LazyComponent: LazyExoticComponent<FC>;
 }
 
-export const SuspenseComponent: FC<SuspenseComponentProps> = ({
+export const SuspenseComponent: FC<ISuspenseComponentProps> = ({
     LazyComponent,
 }) => {
     return (

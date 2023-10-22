@@ -14,10 +14,12 @@ export const GlobalStyle = createGlobalStyle`
 		--padding-s: 8px;
 		--padding-m: 16px;
 		--padding-l: 24px;
+		--padding-xl: 36px;
 
 		--margin-s: 8px;
 		--margin-m: 16px;
 		--margin-l: 24px;
+		--margin-xl: 36px;
 	}
 	body {
 		overflow-y: auto;
