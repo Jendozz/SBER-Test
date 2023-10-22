@@ -22,7 +22,7 @@ Password: 12345
 
 1. Clone the repo
     ```sh
-    git clone https://github.com/Jendozz/SBER-Test
+    git clone https://github.com/Jendozz/SBER-Test.git
     ```
 2. Install NPM packages
     ```sh
