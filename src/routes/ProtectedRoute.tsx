@@ -1,6 +1,6 @@
-import { useLayoutEffect, type FC, type ReactNode } from 'react';
+import { type FC, type ReactNode } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 import { useAppSelector } from '@store/hooks';
 import { selectIsLoggedIn } from '@store/reducers/authSlice/selectors';
@@ -13,13 +13,9 @@ interface IProtectedRouteProps {
 
 export const ProtectedRoute: FC<IProtectedRouteProps> = ({ children }) => {
     const isLoggedIn = useAppSelector(selectIsLoggedIn);
-    const navigate = useNavigate();
 
-    useLayoutEffect(() => {
-        if (!isLoggedIn) {
-            navigate(ERoutePath.LOGIN, { replace: true });
-        }
-    }, [isLoggedIn, navigate]);
-
+    if (!isLoggedIn) {
+        return <Navigate replace to={ERoutePath.LOGIN} />;
+    }
     return <>{children}</>;
 };
