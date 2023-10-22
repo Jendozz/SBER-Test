@@ -45,7 +45,7 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const HeaderLogoContainer = styled.div`
-    width: 200px;
+    width: 180px;
     & > a {
         display: flex;
         align-items: center;

@@ -2,6 +2,15 @@
 
 Test task for the Middle Frontend developer position at Sber
 
+### Deployed at Netlify
+
+https://radiant-tartufo-27b6ce.netlify.app/
+
+### Auth
+
+Login: Admin
+Password: 12345
+
 ### Prerequisites
 
 -   yarn
