@@ -1,0 +1,97 @@
+{
+    "root": true,
+    "env": { "browser": true },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:react-hooks/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript"
+    ],
+    "ignorePatterns": ["dist", ".eslintrc"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": ["./tsconfig.json"],
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "react-hooks",
+        "@typescript-eslint",
+        "jsx-a11y",
+        "import"
+    ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "import/resolver": {
+            "node": {
+                "extensions": [".ts", ".tsx", ".d.ts"]
+            },
+            "typescript": { "alwaysTryTypes": true },
+            "alias": {
+                "extensions": [".ts", ".tsx"],
+                "map": [
+                    ["@global", "./src/global"],
+                    ["@components", "./src/components"],
+                    ["@helpers", "./src/helpers"],
+                    ["@hooks", "./src/hooks"],
+                    ["@modules", "./src/modules"],
+                    ["@pages", "./src/pages"],
+                    ["@store", "./src/store"],
+                    ["@assets", "./src/assets"],
+                    ["@", "./src/"]
+                ]
+            }
+        },
+        "import/parsers": {
+            "@typescript-eslint/parser": [2, [".ts", ".tsx", ".d.ts"]]
+        }
+    },
+    "rules": {
+        "react-hooks/rules-of-hooks": 2,
+        "react-hooks/exhaustive-deps": 1,
+        "import/no-unresolved": 2,
+        "@typescript-eslint/no-explicit-any": 2,
+        "quotes": [2, "single", { "avoidEscape": true }],
+        "jsx-quotes": [2, "prefer-single"],
+        "semi": [1, "always"],
+        "react/jsx-sort-props": [
+            1,
+            {
+                "shorthandFirst": true,
+                "callbacksLast": true,
+                "ignoreCase": true
+            }
+        ],
+        "import/order": [
+            1,
+            {
+                "groups": ["builtin", "external", "internal"],
+                "pathGroups": [
+                    {
+                        "pattern": "react",
+                        "group": "external",
+                        "position": "before"
+                    }
+                ],
+                "pathGroupsExcludedImportTypes": ["react"],
+                "newlines-between": "always",
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                }
+            }
+        ],
+        "@typescript-eslint/consistent-type-imports": 1,
+        "@typescript-eslint/no-unused-vars": [2, { "ignoreRestSiblings": true }]
+    }
+}
